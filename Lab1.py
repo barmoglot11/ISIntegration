@@ -1,6 +1,4 @@
 from datetime import datetime
-from pprint import pprint
-
 import requests
 from rich import print_json
 from rich.console import Console
