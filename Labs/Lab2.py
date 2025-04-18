@@ -14,7 +14,8 @@ data = {
 }
 
 print("[bold magenta]Исходный словарь:[/]")
-print(JSON.from_data(data))
+for key in data.keys():
+    print(f"{key}: {data[key]}")
 
 print("\n[bold yellow]Результат сериализации JSON:[/]")
 print(JSON(json.dumps(data)))
