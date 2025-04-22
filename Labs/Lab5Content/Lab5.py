@@ -32,6 +32,12 @@ def save_to_json(data, filename):
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 
+def load_from_json(filename):
+    """Чтение данных из JSON файла"""
+    with open(filename, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
 def display_table(data):
     """Вывод данных в виде красивой таблицы"""
     table_data = []
@@ -59,6 +65,10 @@ if __name__ == "__main__":
     save_to_json(users_data, "users_data.json")
     print("Данные успешно сохранены в файл 'users_data.json'")
 
+    # Чтение из файла
+    loaded_data = load_from_json("users_data.json")
+    print("\nДанные успешно загружены из файла 'users_data.json'")
+
     # Вывод в консоль
-    print("\nТаблица пользователей:")
-    display_table(users_data)
+    print("\nТаблица пользователей (из загруженных данных):")
+    display_table(loaded_data)
